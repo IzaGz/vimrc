@@ -41,6 +41,7 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-surround'
 Plug 'mxw/vim-jsx'
+Plug 'pangloss/vim-javascript'
 Plug 'mbbill/undotree'
 Plug 'mileszs/ack.vim'
 Plug 'jeffkreeftmeijer/vim-numbertoggle'
@@ -100,3 +101,10 @@ nnoremap <leader>% :MtaJumpToOtherTag<cr>
 
 set incsearch
 
+set nobackup
+set nowritebackup
+set noswapfile
+
+" ack -l 'pattern' | xargs perl -pi -E 's/pattern/replacement/g'
+" need to install  the `ack` with `sudo apt-get install ack-grep`
+" npm install -g snazzy && standard --verbose | snazzy
