@@ -174,6 +174,26 @@ gsbr(){
 # export GOPATH=$HOME/go
 # docker run -it --rm -p 8081:8081 --link mong_fetch_img:mongo mongo-express
 # docker run -p 28002:27017 --name mongo -d mongo
+# docker run -p 5435:5432 --name a545postgres -e POSTGRES_PASSWORD=pass -d postgres:9.6
+# docker run -p 5435:5432 --name a455postgres -e POSTGRES_PASSWORD=pass -d postgres
+#########################33 this link is rihg variant first create with any above then connect with it
+# docker run -it --rm --link a455postgres:postgres postgres psql -h postgres -U postgres
+#########################33 this link is rihg variant first create with any above then connect with it
+# docker run -p 8081:8081 --link a455postgres:db -e DATABASE_URL=postgres://postgres:pass@db:5432/postgres sosedoff/pgweb
+############GUI WEB pgweb #############################################
+# docker exec -U postgres a455postgres pg_restore -C -d postgres < db.dump
+# docker exec -i a455postgres pg_restore -C --clean --no-acl --no-owner -U postgres -d postgres < ./backup.backup
+# pg_restore --verbose --clean --no-acl --no-owner -h localhost -U myuser -d mydb latest.dump
+# docker run -it -p 5435:5432 --name 477a545postgres56 -e POSTGRES_PASSWORD=pass -e PGDATA=/var/lib/postgresql/data/pgdata -v /var/lib/postgresql/data/pgdata:/home/z/projects/a5000/a50000/backup.backup -d postgres:9.6
+# docker run -it --rm --link a545postgres:postgres postgres psql -h postgres -U postgres -f "/home/z/projects/a5000/a50000/backup.backup"
+
+# docker exec -i a545postgres pg_restore -C --clean --no-acl --no-owner -U postgres -d 0.0.0.0:5435 < /home/z/projects/a5000/a50000/backup.backup
+############################################################################################################
+# psql -e -U postgres -d postgres -f "/home/z/projects/a5000/a50000/backup.backup"
+# docker run -it -p 5435:5432 --name 564a8715545postgre657 -e POSTGRES_PASSWORD=pass -v /home/z/projects/a5000/a50000/backup.backup:/projects/back.backup -d postgres:9.6
+# docker run -p 8081:8081 --link 564a8715545postgre657:db -e DATABASE_URL=postgres://postgres:pass@db:5432/postgres sosedoff/pgweb
+# docker run -it --rm --link 477a545postgres56:postgres postgres psql -h postgres -U postgres -f "/var/lib/postgresql/data/pgdata/backup.backup"
+# docker run -it -p 5435:5432 --name 4a77a545postgres5645 -e POSTGRES_PASSWORD=pass -e POSTGRES_DB=backup -e PGDATA=/var/lib/postgresql/data/pgdata -v /var/lib/postgresql/data/pgdata:/home/z/projects/a5000/a50000/backup.backup -d postgres:9.6
 # ack -lR 'Send App Instructions'
 # ack -lRi 'customer|service'
 # git stash

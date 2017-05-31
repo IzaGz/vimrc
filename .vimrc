@@ -40,8 +40,6 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-surround'
-Plug 'mxw/vim-jsx'
-Plug 'pangloss/vim-javascript'
 Plug 'mbbill/undotree'
 Plug 'mileszs/ack.vim'
 Plug 'jeffkreeftmeijer/vim-numbertoggle'
@@ -58,6 +56,10 @@ Plug 'lambdalisue/vim-fullscreen'
 Plug 'KabbAmine/vCoolor.vim'
 Plug 'ap/vim-css-color'
 Plug 'mattn/emmet-vim'
+" Plug 'mxw/vim-jsx'
+Plug 'pangloss/vim-javascript'
+Plug 'maxmellon/vim-jsx-pretty'
+" Plug 'peitalin/vim-jsx-typescript'
 " Initialize plugin system
 call plug#end()
 
@@ -188,6 +190,9 @@ function! GuiTabToolTip()
   return tip
 endfunction
 set guitabtooltip=%{GuiTabToolTip()}
+" set filetypes as typescript.jsx
+" autocmd BufNewFile,BufRead *.tsx,*.jsx set filetype=typescript.jsx
+
 " ack -l 'pattern' | xargs perl -pi -E 's/pattern/replacement/g'
 " need to install  the `ack` with `sudo apt-get install ack-grep`
 " npm install -g snazzy && standard --verbose | snazzy
